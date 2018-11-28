@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="PIK_price:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/PIK_price_jar</output-path>
+    <root id="archive" name="PIK_price.jar">
+      <element id="module-output" name="PIK_price" />
+    </root>
+  </artifact>
+</component>

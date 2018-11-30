@@ -2,10 +2,12 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ParserKassir implements IParser {
 
-    private String price;
+
 
     private String sector;
 
@@ -22,19 +24,13 @@ public class ParserKassir implements IParser {
     }
 
     public String getSector() {
-        sector = String.valueOf(getKassirPage().select("span.name").text());
-        String sectors[] = sector.split(" ");
-        sector = sectors[sectors.length-1];
+        sector = String.valueOf(getKassirPage().select("span").text());
+        Pattern str = Pattern.compile("ФАН-ЗОНА .*? ", Pattern.DOTALL);
+        Matcher mat = str.matcher(sector);
+        while (mat.find()) {
+            sector = String.valueOf(mat.group());
+            break;
+        }
         return sector;
     }
-
-
-    public String getPrice() {
-        price = String.valueOf(getKassirPage().select("span.price*").text());
-        String prices [] = price.split(" ");
-        price = prices[prices.length-1];
-        return price;
-    }
-
-
 }

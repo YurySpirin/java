@@ -10,7 +10,6 @@ public static void main(String[] args) {
     System.out.println(q.getArea());*/
     ParserKassir k = new ParserKassir();
     System.out.println(k.getSector());
-    System.out.println(k.getPrice());
 }
   }
 

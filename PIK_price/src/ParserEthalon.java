@@ -13,7 +13,7 @@ public class ParserEthalon implements IParser {
   public Document getEthalonPage() {
       ethalonPage = null;
       try {
-          ethalonPage = Jsoup.connect("https://www.izumrudnie-holmi.ru/choose/flat-17-2-440").get();
+          ethalonPage = Jsoup.connect("https://www.izumrudnie-holmi.ru/choose/flat-17-2-457").get();
       } catch (IOException e) {
           e.printStackTrace();
       }

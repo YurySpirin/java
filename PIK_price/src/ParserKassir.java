@@ -24,13 +24,7 @@ public class ParserKassir implements IParser {
     }
 
     public String getSector() {
-        sector = String.valueOf(getKassirPage().select("span").text());
-        Pattern str = Pattern.compile("ФАН-ЗОНА .*? ", Pattern.DOTALL);
-        Matcher mat = str.matcher(sector);
-        while (mat.find()) {
-            sector = String.valueOf(mat.group());
-            break;
-        }
+        sector = String.valueOf(getKassirPage().select("span:contains(ФАН-ЗОНА) + span.price").text());
         return sector;
     }
 }
